@@ -4,7 +4,7 @@ const covid19ImpactEstimator = (data) => {
   const duration = {
     days: 1,
     weeks: 7,
-    months: 7
+    months: 30
   };
 
   return {
@@ -20,7 +20,7 @@ const covid19ImpactEstimator = (data) => {
       currentlyInfected: input.reportedCases * 50,
       infectionsByRequestedTime:
         input.reportedCases
-        * 10
+        * 50
         * 2 ** parseInt((input.timeToElapse * duration[input.periodType]) / 3, 10)
     }
   };
