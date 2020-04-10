@@ -7,8 +7,8 @@ const calculator = (data, impactFactor) => {
 
   const infections = data.reportedCases * impactFactor;
   const rate = infections * 2 ** parseInt((data.timeToElapse * duration[data.periodType]) / 3, 10);
-  const cases = Math.round(rate * 0.35);
-  const beds = Math.round(data.totalHospitalBeds * 0.35) - cases;
+  const cases = parseInt(rate * 0.15, 10);
+  const beds = parseInt(data.totalHospitalBeds * 0.35 - cases, 10);
   return [infections, rate, cases, beds];
 };
 
