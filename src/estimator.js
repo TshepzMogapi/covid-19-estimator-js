@@ -6,7 +6,7 @@ const infectionsRate = (data, impactFactor) => {
   };
   return data.reportedCases
   * impactFactor
-  * 2 ** parseInt((data.timeToElapse * duration[data.periodType]) / 3, 10)
+  * 2 ** parseInt((data.timeToElapse * duration[data.periodType]) / 3, 10);
 };
 
 const covid19ImpactEstimator = (data) => {
