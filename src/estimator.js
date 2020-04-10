@@ -1,5 +1,5 @@
 const infectionsRate = (currentlyInfected, factor, periodType) => {
-  return currentlyInfected * Math.pow(factor, periodType);
+  return currentlyInfected * factor ** periodType;
 };
 
 const covid19ImpactEstimator = (data) => {
