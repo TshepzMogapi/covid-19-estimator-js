@@ -4,7 +4,7 @@ const infectionsRate = (data, impactFactor) => {
     weeks: 7,
     months: 30
   };
-  return [data.reportedCases * 10, data.reportedCases
+  return [data.reportedCases * impactFactor, data.reportedCases
   * impactFactor
   * 2 ** parseInt((data.timeToElapse * duration[data.periodType]) / 3, 10)];
   // parseInt(infectionsRate(data, impactFactor) * 0.15, 10)];
