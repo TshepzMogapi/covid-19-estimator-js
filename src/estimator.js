@@ -1,18 +1,16 @@
-const infectionsRate = (currentlyInfected, factor, periodType) => {
-  return currentlyInfected * factor ** periodType;
-};
-
 const covid19ImpactEstimator = (data) => {
   const input = data;
   return {
     data: input,
     impact: {
       currentlyInfected: input.reportedCases * 10,
-      infectionsByRequestedTime: infectionsRate(input.reportedCases * 10, 2, 9)
+      infectionsByRequestedTime:
+        input.reportedCases * 10 * 2 ** parseInt(input.timeToElapse / 3)
     },
     severeImpact: {
       currentlyInfected: input.reportedCases * 50,
-      infectionsByRequestedTime: infectionsRate(input.reportedCases * 10, 2, 9)
+      infectionsByRequestedTime:
+      input.reportedCases * 50 * 2 ** parseInt(input.timeToElapse / 3)
     }
   };
 };
