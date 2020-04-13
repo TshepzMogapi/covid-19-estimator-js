@@ -12,7 +12,7 @@ const calculator = (data, impactFactor) => {
   const icuBeds = parseInt(rate * 0.05, 10);
   const ventilatorsBeds = parseInt(rate * 0.02, 10);
   const dollars = parseInt((rate * data.region.avgDailyIncomePopulation
-  * data.region.avgDailyIncomeInUSD) / duration[data.periodType], 10);
+  * data.region.avgDailyIncomeInUSD) / (data.timeToElapse * duration[data.periodType]), 10);
   return [infections, rate, cases, beds, icuBeds, ventilatorsBeds, dollars];
 };
 
