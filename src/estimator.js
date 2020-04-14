@@ -11,9 +11,9 @@ const calculator = (data, impactFactor) => {
   const beds = parseInt(data.totalHospitalBeds * 0.35 - cases, 10);
   const icuBeds = parseInt(rate * 0.05, 10);
   const ventilatorsBeds = parseInt(rate * 0.02, 10);
-  const dollarsInF = parseInt((rate * data.region.avgDailyIncomePopulation
+  const dollars = parseInt((rate * data.region.avgDailyIncomePopulation
   * data.region.avgDailyIncomeInUSD) / (data.timeToElapse * duration[data.periodType]), 10);
-  return [infections, rate, cases, beds, icuBeds, ventilatorsBeds, dollarsInF];
+  return [infections, rate, cases, beds, icuBeds, ventilatorsBeds, dollars];
 };
 
 const covid19ImpactEstimator = (data) => {
